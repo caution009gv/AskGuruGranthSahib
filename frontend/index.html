@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="AskGuruGranthSahib — AI-powered Q&A assistant based on the sacred text of Sri Guru Granth Sahib Ji. Ask questions and receive answers grounded in Gurbani.">
+    <title>AskGuruGranthSahib — Divine Wisdom at Your Fingertips</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <!-- Animated Background -->
+    <div class="bg-gradient"></div>
+    <div class="bg-particles" id="particles"></div>
+
+    <!-- Main App Container -->
+    <div class="app-container">
+
+        <!-- Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <div class="logo-icon">☬</div>
+                    <div class="logo-text">
+                        <h1>AskGuruGranthSahib</h1>
+                        <p class="logo-subtitle">Divine Wisdom • AI Guide</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sidebar-content">
+                <div class="info-card">
+                    <div class="info-card-icon">📖</div>
+                    <div class="info-card-text">
+                        <h3>Sri Guru Granth Sahib Ji</h3>
+                        <p>The eternal, living Guru of the Sikhs — 1430 Angs of divine wisdom from the Sikh Gurus and saints.</p>
+                    </div>
+                </div>
+
+                <div class="suggested-questions">
+                    <h3 class="section-title">✨ Try Asking</h3>
+                    <button class="suggestion-btn" onclick="askSuggestion(this)">
+                        What does Guru Granth Sahib say about the purpose of human life?
+                    </button>
+                    <button class="suggestion-btn" onclick="askSuggestion(this)">
+                        Explain the concept of Naam in Gurbani
+                    </button>
+                    <button class="suggestion-btn" onclick="askSuggestion(this)">
+                        What is the Mool Mantar and its meaning?
+                    </button>
+                    <button class="suggestion-btn" onclick="askSuggestion(this)">
+                        What does Gurbani teach about serving others (Seva)?
+                    </button>
+                    <button class="suggestion-btn" onclick="askSuggestion(this)">
+                        How does Guru Granth Sahib address the concept of death?
+                    </button>
+                </div>
+            </div>
+
+            <div class="sidebar-footer">
+                <button class="reset-btn" id="resetBtn" onclick="resetConversation()">
+                    <span class="reset-icon">🔄</span>
+                    New Conversation
+                </button>
+                <div class="stats" id="stats">
+                    <span class="stats-dot"></span>
+                    <span id="statsText">Connecting...</span>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Chat Area -->
+        <main class="chat-main">
+            <!-- Mobile Header -->
+            <header class="mobile-header">
+                <button class="menu-btn" id="menuBtn" onclick="toggleSidebar()">
+                    <span></span><span></span><span></span>
+                </button>
+                <div class="mobile-logo">
+                    <span class="mobile-logo-icon">☬</span>
+                    <span>AskGuruGranthSahib</span>
+                </div>
+            </header>
+
+            <!-- Chat Messages -->
+            <div class="chat-messages" id="chatMessages">
+                <!-- Welcome Message -->
+                <div class="welcome-container" id="welcomeContainer">
+                    <div class="welcome-icon-wrapper">
+                        <div class="welcome-icon">☬</div>
+                        <div class="welcome-glow"></div>
+                    </div>
+                    <h2 class="welcome-title">Waheguru Ji Ka Khalsa, Waheguru Ji Ki Fateh</h2>
+                    <p class="welcome-subtitle">
+                        Ask me anything about Sri Guru Granth Sahib Ji. I will search through the sacred text
+                        and share wisdom grounded in Gurbani, with references to specific Angs.
+                    </p>
+                    <div class="welcome-divider">
+                        <span>ੴ</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Input Area -->
+            <div class="input-area">
+                <div class="input-container">
+                    <div class="input-wrapper">
+                        <textarea
+                            id="questionInput"
+                            placeholder="Ask about Sri Guru Granth Sahib Ji..."
+                            rows="1"
+                            maxlength="2000"
+                        ></textarea>
+                        <button class="send-btn" id="sendBtn" onclick="sendQuestion()" disabled>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="22" y1="2" x2="11" y2="13"></line>
+                                <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                            </svg>
+                        </button>
+                    </div>
+                    <p class="input-hint">
+                        Answers are AI-generated based on Sri Guru Granth Sahib Ji. Always verify with the original scripture.
+                    </p>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Overlay for mobile sidebar -->
+    <div class="sidebar-overlay" id="sidebarOverlay" onclick="toggleSidebar()"></div>
+
+    <script src="/static/script.js"></script>
+</body>
+</html>

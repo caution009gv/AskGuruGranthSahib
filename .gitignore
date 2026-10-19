@@ -1,0 +1,16 @@
+# Environment variables (NEVER COMMIT SENSITIVE KEYS)
+.env
+*.env
+backend/.env
+
+# Python cache & virtual environments
+__pycache__/
+*.py[cod]
+*$py.class
+venv/
+.venv/
+env/
+
+# OS files
+.DS_Store
+Thumbs.db
